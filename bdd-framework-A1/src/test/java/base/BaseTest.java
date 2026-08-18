@@ -3,18 +3,24 @@ package base;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
-	public static WebDriver driver;
-	
-	public void setUp() {
-		driver = new EdgeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-	}
-	
-	public void tearDown() {
-		driver.quit();
-	}
+
+    public static WebDriver driver;
+
+    public void setUp() {
+
+        driver = new ChromeDriver();
+
+       
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    }
+
+    public void tearDown() {
+
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
