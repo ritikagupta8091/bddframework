@@ -12,8 +12,6 @@ public class BaseTest {
     public void setUp() {
 
         driver = new ChromeDriver();
-
-       
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
